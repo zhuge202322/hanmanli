@@ -84,78 +84,79 @@ if (certificateGridTargets.length && window.certificateGroups) {
   });
 }
 
-const lawyerPanel = document.querySelector("#lawyerProfile");
-const lawyerTabs = document.querySelectorAll("[data-lawyer]");
+const teamList = document.querySelector("#teamList");
 
-if (lawyerPanel && lawyerTabs.length && window.teamLawyers) {
-  const renderLawyer = (id) => {
-    const lawyer = window.teamLawyers[id];
-    if (!lawyer) return;
+if (teamList && window.teamLawyers) {
+  const lawyerKeys = ["han", "zhao", "wang", "lin", "chen"];
+  
+  const renderAllLawyers = () => {
+    const html = lawyerKeys.map((id) => {
+      const lawyer = window.teamLawyers[id];
+      if (!lawyer) return "";
 
-    const portrait = lawyer.image
-      ? `<img src="${lawyer.image}" alt="${lawyer.name}" style="object-position:${lawyer.center || "center"}" />`
-      : `<div class="lawyer-initials">${lawyer.initials || lawyer.name.slice(0, 1)}</div>`;
+      const portrait = lawyer.image
+        ? `<img src="${lawyer.image}" alt="${lawyer.name}" style="object-position:${lawyer.center || "center"}" />`
+        : `<div class="lawyer-initials">${lawyer.initials || lawyer.name.slice(0, 1)}</div>`;
 
-    lawyerPanel.innerHTML = `
-      <div class="lawyer-visual">${portrait}</div>
-      <div class="lawyer-detail">
-        <p class="eyebrow">${lawyer.title}</p>
-        <h2>${lawyer.name}</h2>
-        <p class="lawyer-summary">${lawyer.summary}</p>
-        <div class="lawyer-tags">
-          ${lawyer.tags.map((tag) => `<span>${tag}</span>`).join("")}
-        </div>
-        <dl class="lawyer-facts">
-          ${lawyer.facts
-            .map(
-              ([label, value]) => `
-                <div>
-                  <dt>${label}</dt>
-                  <dd>${value}</dd>
-                </div>
-              `,
-            )
-            .join("")}
-        </dl>
-        <div class="lawyer-sections">
-          ${lawyer.sections
-            .map(
-              (section) => `
-                <section>
-                  <h3>${section.heading}</h3>
-                  <ul>
-                    ${section.items.map((item) => `<li>${item}</li>`).join("")}
-                  </ul>
-                </section>
-              `,
-            )
-            .join("")}
-        </div>
-        <div class="hero-actions lawyer-actions">
-          ${lawyer.actions
-            .map(
-              ([text, href], index) =>
-                `<a class="btn ${index === 0 ? "primary" : "ghost dark"}" href="${href}">${text}</a>`,
-            )
-            .join("")}
-        </div>
-      </div>
-    `;
+      return `
+        <article class="lawyer-editorial-card">
+          <div class="lawyer-editorial-visual">
+            <div class="sticky-visual">
+              ${portrait}
+            </div>
+          </div>
+          <div class="lawyer-editorial-content">
+            <div class="lawyer-editorial-header">
+              <p class="eyebrow">${lawyer.title}</p>
+              <h2>${lawyer.name}</h2>
+              <p class="lawyer-summary">${lawyer.summary}</p>
+            </div>
+            
+            <dl class="lawyer-facts">
+              ${lawyer.facts
+                .map(
+                  ([label, value]) => `
+                    <div>
+                      <dt>${label}</dt>
+                      <dd>${value}</dd>
+                    </div>
+                  `,
+                )
+                .join("")}
+            </dl>
+            
+            <div class="lawyer-sections">
+              ${lawyer.sections
+                .map(
+                  (section) => `
+                    <section>
+                      <h3>${section.heading}</h3>
+                      <ul>
+                        ${section.items.map((item) => `<li>${item}</li>`).join("")}
+                      </ul>
+                    </section>
+                  `,
+                )
+                .join("")}
+            </div>
+            
+            <div class="hero-actions lawyer-actions">
+              ${lawyer.actions
+                .map(
+                  ([text, href], index) =>
+                    `<a class="btn ${index === 0 ? "primary" : "ghost dark"}" href="${href}">${text}</a>`,
+                )
+                .join("")}
+            </div>
+          </div>
+        </article>
+      `;
+    }).join("");
+    
+    teamList.innerHTML = html;
   };
 
-  lawyerTabs.forEach((tabButton) => {
-    tabButton.addEventListener("click", () => {
-      lawyerTabs.forEach((button) => {
-        const active = button === tabButton;
-        button.classList.toggle("is-active", active);
-        button.setAttribute("aria-selected", String(active));
-      });
-      renderLawyer(tabButton.dataset.lawyer);
-      if (window.animateLawyerPanel) window.animateLawyerPanel();
-    });
-  });
-
-  renderLawyer(document.querySelector("[data-lawyer].is-active")?.dataset.lawyer || "han");
+  renderAllLawyers();
 }
 
 // --- GSAP Animations ---
@@ -277,14 +278,15 @@ if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     });
   });
 
-  // Lawyer Details Panel (when switching tabs)
-  window.animateLawyerPanel = () => {
-    gsap.fromTo(".lawyer-visual", { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" });
-    gsap.fromTo(".lawyer-detail", { x: 30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" });
-  };
-
-  // Trigger initial animation for the lawyer panel if it exists
-  if (document.querySelector(".lawyer-visual")) {
-    window.animateLawyerPanel();
-  }
+  // Lawyer Details Panel (Editorial Layout)
+  gsap.utils.toArray(".lawyer-editorial-card").forEach((card) => {
+    gsap.fromTo(card.querySelector(".lawyer-editorial-content"), 
+      { opacity: 0, y: 30 },
+      { scrollTrigger: { trigger: card, start: "top 80%" }, opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+    );
+    gsap.fromTo(card.querySelector(".sticky-visual"), 
+      { opacity: 0 },
+      { scrollTrigger: { trigger: card, start: "top 80%" }, opacity: 1, duration: 1, ease: "power3.out" }
+    );
+  });
 }
