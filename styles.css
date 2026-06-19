@@ -1285,6 +1285,8 @@ a:hover {
     padding: 32px 24px 64px;
     margin-top: 50vh;
   }
+}
+
   .site-header {
     align-items: flex-start;
     flex-direction: column;
@@ -1367,7 +1369,6 @@ a:hover {
   .lawyer-facts {
     grid-template-columns: 1fr;
   }
-}
 
 @media (max-width: 620px) {
   .site-header {
