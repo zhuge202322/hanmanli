@@ -82,6 +82,15 @@ if (certificateGridTargets.length && window.certificateGroups) {
     if (!group) return;
     target.innerHTML = group.items.map(formatCard).join("");
   });
+  
+  if (typeof gsap !== "undefined") {
+    gsap.utils.toArray(".certificate-card").forEach((card) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 30 },
+        { scrollTrigger: { trigger: card, start: "top 90%" }, opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+      );
+    });
+  }
 }
 
 const teamSwitcher = document.querySelector(".team-switcher");
@@ -251,7 +260,7 @@ if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
   }
 
   // General Article Blocks (Grid)
-  gsap.utils.toArray(".case-grid article, .detail-grid article, .audience-grid article, .process-list article, .summary-grid article, .private-map article, .certificate-card").forEach((item) => {
+  gsap.utils.toArray(".case-grid article, .detail-grid article, .audience-grid article, .process-list article, .summary-grid article, .private-map article").forEach((item) => {
     gsap.to(item, {
       scrollTrigger: { trigger: item, start: "top 90%" },
       y: 0,
