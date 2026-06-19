@@ -274,7 +274,7 @@ if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
   }
 
   // General Article Blocks (Grid)
-  gsap.utils.toArray(".case-grid article, .detail-grid article, .audience-grid article, .process-list article, .summary-grid article, .private-map article, .certificate-card").forEach((item) => {
+  gsap.utils.toArray(".case-grid article, .detail-grid article, .audience-grid article, .process-list article, .summary-grid article, .private-map article").forEach((item) => {
     gsap.fromTo(item, 
       { y: 30, opacity: 0 },
       {
