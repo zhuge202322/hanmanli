@@ -84,79 +84,102 @@ if (certificateGridTargets.length && window.certificateGroups) {
   });
 }
 
+const teamSwitcher = document.querySelector(".team-switcher");
 const teamList = document.querySelector("#teamList");
 
-if (teamList && window.teamLawyers) {
-  const lawyerKeys = ["han", "zhao", "wang", "lin", "chen"];
+if (teamSwitcher && teamList && window.teamLawyers) {
+  const tabBtns = teamSwitcher.querySelectorAll(".tab-btn");
   
-  const renderAllLawyers = () => {
-    const html = lawyerKeys.map((id) => {
-      const lawyer = window.teamLawyers[id];
-      if (!lawyer) return "";
+  const renderLawyer = (id) => {
+    const lawyer = window.teamLawyers[id];
+    if (!lawyer) return;
 
-      const portrait = lawyer.image
-        ? `<img src="${lawyer.image}" alt="${lawyer.name}" style="object-position:${lawyer.center || "center"}" />`
-        : `<div class="lawyer-initials">${lawyer.initials || lawyer.name.slice(0, 1)}</div>`;
+    const portrait = lawyer.image
+      ? `<img src="${lawyer.image}" alt="${lawyer.name}" style="object-position:${lawyer.center || "center"}" />`
+      : `<div class="lawyer-initials">${lawyer.initials || lawyer.name.slice(0, 1)}</div>`;
 
-      return `
-        <article class="lawyer-editorial-card">
-          <div class="lawyer-editorial-visual">
-            <div class="sticky-visual">
-              ${portrait}
-            </div>
+    const html = `
+      <article class="lawyer-editorial-card">
+        <div class="lawyer-editorial-visual">
+          <div class="sticky-visual">
+            ${portrait}
           </div>
-          <div class="lawyer-editorial-content">
-            <div class="lawyer-editorial-header">
-              <p class="eyebrow">${lawyer.title}</p>
-              <h2>${lawyer.name}</h2>
-              <p class="lawyer-summary">${lawyer.summary}</p>
-            </div>
-            
-            <dl class="lawyer-facts">
-              ${lawyer.facts
-                .map(
-                  ([label, value]) => `
-                    <div>
-                      <dt>${label}</dt>
-                      <dd>${value}</dd>
-                    </div>
-                  `,
-                )
-                .join("")}
-            </dl>
-            
-            <div class="lawyer-sections">
-              ${lawyer.sections
-                .map(
-                  (section) => `
-                    <section>
-                      <h3>${section.heading}</h3>
-                      <ul>
-                        ${section.items.map((item) => `<li>${item}</li>`).join("")}
-                      </ul>
-                    </section>
-                  `,
-                )
-                .join("")}
-            </div>
-            
-            <div class="hero-actions lawyer-actions">
-              ${lawyer.actions
-                .map(
-                  ([text, href], index) =>
-                    `<a class="btn ${index === 0 ? "primary" : "ghost dark"}" href="${href}">${text}</a>`,
-                )
-                .join("")}
-            </div>
+        </div>
+        <div class="lawyer-editorial-content">
+          <div class="lawyer-editorial-header">
+            <p class="eyebrow">${lawyer.title}</p>
+            <h2>${lawyer.name}</h2>
+            <p class="lawyer-summary">${lawyer.summary}</p>
           </div>
-        </article>
-      `;
-    }).join("");
+          
+          <dl class="lawyer-facts">
+            ${lawyer.facts
+              .map(
+                ([label, value]) => `
+                  <div>
+                    <dt>${label}</dt>
+                    <dd>${value}</dd>
+                  </div>
+                `,
+              )
+              .join("")}
+          </dl>
+          
+          <div class="lawyer-sections">
+            ${lawyer.sections
+              .map(
+                (section) => `
+                  <section>
+                    <h3>${section.heading}</h3>
+                    <ul>
+                      ${section.items.map((item) => `<li>${item}</li>`).join("")}
+                    </ul>
+                  </section>
+                `,
+              )
+              .join("")}
+          </div>
+          
+          <div class="hero-actions lawyer-actions">
+            ${lawyer.actions
+              .map(
+                ([text, href], index) =>
+                  `<a class="btn ${index === 0 ? "primary" : "ghost dark"}" href="${href}">${text}</a>`,
+              )
+              .join("")}
+          </div>
+        </div>
+      </article>
+    `;
     
     teamList.innerHTML = html;
+    
+    if (typeof gsap !== "undefined") {
+      gsap.fromTo(teamList.querySelector(".lawyer-editorial-content"), 
+        { opacity: 0, x: 20 },
+        { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }
+      );
+      gsap.fromTo(teamList.querySelector(".sticky-visual"), 
+        { opacity: 0, scale: 0.98 },
+        { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }
+      );
+    }
   };
 
-  renderAllLawyers();
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabBtns.forEach(b => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-selected", "true");
+      renderLawyer(btn.dataset.lawyer);
+    });
+  });
+  
+  const activeBtn = teamSwitcher.querySelector(".is-active");
+  if(activeBtn) renderLawyer(activeBtn.dataset.lawyer);
 }
 
 // --- GSAP Animations ---
