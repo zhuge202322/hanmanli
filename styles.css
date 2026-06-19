@@ -2,7 +2,7 @@
   --bg: #ffffff;
   --fg: #111111;
   --line: #111111;
-  --accent: #111111;
+  --accent: #D4AF37; /* 香槟金/高级黄作为点缀 */
   --muted: #666666;
   --font-heading: "Noto Serif SC", "Songti SC", STSong, "Times New Roman", serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -1513,3 +1513,70 @@ a:hover {
     display: grid;
   }
 }
+
+
+/* === Accent Colors & Yellow Lines === */
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:hover,
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.btn:hover,
+.button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Top accent line for the header */
+.site-header {
+  border-top: 4px solid var(--accent);
+}
+
+/* Active state for team member tabs */
+.team-list article.active h3 {
+  color: var(--accent);
+}
+.team-list article.active {
+  border-left: 3px solid var(--accent);
+  padding-left: 21px; /* adjust padding for border */
+}
+
+/* Add subtle accent line above major section titles */
+h1::after,
+h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 16px;
+}
+
+/* Remove it from some places where it doesn't fit */
+.hero-copy h1::after {
+  display: none;
+}
+
+.timeline h3 {
+  color: var(--accent);
+}
+
+.product-card:hover {
+  border-bottom: 1px solid var(--accent);
+}
+
