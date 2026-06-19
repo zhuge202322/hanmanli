@@ -83,13 +83,9 @@ if (certificateGridTargets.length && window.certificateGroups) {
     target.innerHTML = group.items.map(formatCard).join("");
   });
   
-  if (typeof gsap !== "undefined") {
-    gsap.utils.toArray(".certificate-card").forEach((card) => {
-      gsap.fromTo(card,
-        { opacity: 0, y: 30 },
-        { scrollTrigger: { trigger: card, start: "top 90%" }, opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
-      );
-    });
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+    // Certificates animation removed to ensure visibility
   }
 }
 
