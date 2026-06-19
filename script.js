@@ -193,117 +193,150 @@ if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
 
   // Hero Section
   if (document.querySelector(".hero-copy")) {
-    gsap.to(".hero-copy > *", {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      stagger: 0.15,
-      ease: "power3.out",
-      delay: 0.2
-    });
+    gsap.fromTo(".hero-copy > *", 
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        delay: 0.2
+      }
+    );
   }
 
   // Sub Hero Sections
   if (document.querySelector(".sub-hero")) {
-    gsap.to(".sub-hero > *", {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      stagger: 0.15,
-      ease: "power3.out",
-      delay: 0.2
-    });
+    gsap.fromTo(".sub-hero > *", 
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        delay: 0.2
+      }
+    );
   }
 
   // Service Cards
   gsap.utils.toArray(".service-card").forEach((card, i) => {
-    gsap.to(card, {
-      scrollTrigger: { trigger: card, start: "top 85%" },
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+    gsap.fromTo(card, 
+      { y: 30, opacity: 0 },
+      {
+        scrollTrigger: { trigger: card, start: "top 85%" },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out"
+      }
+    );
   });
 
   // Featured Article
   if (document.querySelector(".featured-article")) {
-    gsap.to(".featured-article", {
-      scrollTrigger: { trigger: ".featured-article", start: "top 85%" },
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+    gsap.fromTo(".featured-article", 
+      { y: 30, opacity: 0 },
+      {
+        scrollTrigger: { trigger: ".featured-article", start: "top 85%" },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out"
+      }
+    );
   }
 
   // Profile Image & Copy
   if (document.querySelector(".profile-image") && document.querySelector(".profile-copy")) {
-    gsap.to(".profile-image", {
-      scrollTrigger: { trigger: ".profile-card", start: "top 80%" },
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power3.out"
-    });
-    gsap.to(".profile-copy", {
-      scrollTrigger: { trigger: ".profile-card", start: "top 80%" },
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power3.out"
-    });
+    gsap.fromTo(".profile-image", 
+      { x: -30, opacity: 0 },
+      {
+        scrollTrigger: { trigger: ".profile-card", start: "top 80%" },
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out"
+      }
+    );
+    gsap.fromTo(".profile-copy", 
+      { x: 30, opacity: 0 },
+      {
+        scrollTrigger: { trigger: ".profile-card", start: "top 80%" },
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out"
+      }
+    );
   }
 
   // General Article Blocks (Grid)
-  gsap.utils.toArray(".case-grid article, .detail-grid article, .audience-grid article, .process-list article, .summary-grid article, .private-map article").forEach((item) => {
-    gsap.to(item, {
-      scrollTrigger: { trigger: item, start: "top 90%" },
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: "power2.out"
-    });
+  gsap.utils.toArray(".case-grid article, .detail-grid article, .audience-grid article, .process-list article, .summary-grid article, .private-map article, .certificate-card").forEach((item) => {
+    gsap.fromTo(item, 
+      { y: 30, opacity: 0 },
+      {
+        scrollTrigger: { trigger: item, start: "top 90%" },
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out"
+      }
+    );
   });
 
   // Timelines
   gsap.utils.toArray(".timeline div").forEach((item) => {
-    gsap.to(item, {
-      scrollTrigger: { trigger: item, start: "top 90%" },
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: "power2.out"
-    });
+    gsap.fromTo(item, 
+      { y: 30, opacity: 0 },
+      {
+        scrollTrigger: { trigger: item, start: "top 90%" },
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out"
+      }
+    );
   });
 
   // Credential Layout
   if (document.querySelector(".credential-layout img") && document.querySelector(".credential-list")) {
-    gsap.to(".credential-layout img", {
-      scrollTrigger: { trigger: ".credential-layout", start: "top 80%" },
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power3.out"
-    });
-    gsap.to(".credential-list", {
-      scrollTrigger: { trigger: ".credential-layout", start: "top 80%" },
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power3.out"
-    });
+    gsap.fromTo(".credential-layout img", 
+      { x: -30, opacity: 0 },
+      {
+        scrollTrigger: { trigger: ".credential-layout", start: "top 80%" },
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out"
+      }
+    );
+    gsap.fromTo(".credential-list", 
+      { x: 30, opacity: 0 },
+      {
+        scrollTrigger: { trigger: ".credential-layout", start: "top 80%" },
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out"
+      }
+    );
   }
 
   // Team Members
   gsap.utils.toArray(".team-member").forEach((member) => {
-    gsap.to(member, {
-      scrollTrigger: { trigger: member, start: "top 90%" },
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+    gsap.fromTo(member, 
+      { y: 30, opacity: 0 },
+      {
+        scrollTrigger: { trigger: member, start: "top 90%" },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out"
+      }
+    );
   });
 
   // Lawyer Details Panel (Editorial Layout)
