@@ -6,7 +6,7 @@
         "items":  [
                       {
                           "date":  "2018",
-                          "title":  "荣誉证书",
+                          "title":  "市律协优秀专业委员会委员",
                           "file":  "public-docs/honors/honors-04-2018-.pdf",
                           "sourceName":  "2018-.pdf",
                           "hasThumb":  true,
@@ -14,7 +14,7 @@
                       },
                       {
                           "date":  "2020.12",
-                          "title":  "荣誉证书",
+                          "title":  "广东法学会婚姻家庭法学研究会优秀论文奖",
                           "file":  "public-docs/honors/honors-09-202012-.pdf",
                           "sourceName":  "202012-.pdf",
                           "hasThumb":  true,
@@ -85,7 +85,7 @@
         "items":  [
                       {
                           "date":  "2018.08",
-                          "title":  "聘书",
+                          "title":  "河源仲裁委员会仲裁员",
                           "file":  "public-docs/appointments/appointments-04-201808-.pdf",
                           "sourceName":  "201808-.pdf",
                           "hasThumb":  true,
@@ -93,7 +93,7 @@
                       },
                       {
                           "date":  "2018.09",
-                          "title":  "聘书",
+                          "title":  "茂名仲裁委员会仲裁员",
                           "file":  "public-docs/appointments/appointments-05-201809-.pdf",
                           "sourceName":  "201809-.pdf",
                           "hasThumb":  true,

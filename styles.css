@@ -142,17 +142,19 @@ a {
 
 .hero {
   position: relative;
-  min-height: 720px;
-  background:
-    linear-gradient(180deg, rgba(17, 24, 32, 0.12), rgba(17, 24, 32, 0.76)),
-    var(--deep);
-  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--paper);
   overflow: hidden;
 }
 
 .hero-media {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
 }
 
 .hero-media img {
@@ -176,12 +178,11 @@ a {
   position: relative;
   z-index: 1;
   display: flex;
-  min-height: 720px;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 112px 24px 64px;
+  width: 50%;
+  padding: 112px 64px;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  color: var(--deep);
 }
 
 .hero-copy > * {
@@ -366,9 +367,11 @@ a {
 
 .profile-card {
   display: grid;
-  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
-  gap: 36px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 46px;
   align-items: stretch;
+  background: var(--white);
+  border: 1px solid var(--line);
 }
 
 .profile-image {
@@ -376,7 +379,7 @@ a {
   overflow: hidden;
   background: var(--deep);
   opacity: 0;
-  transform: translateX(-30px);
+  transform: translateX(30px);
 }
 
 .profile-image img {
@@ -388,9 +391,51 @@ a {
 
 .profile-copy {
   align-self: center;
-  padding: 34px 0;
+  padding: 34px 46px;
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(-30px);
+}
+
+.profile-cases {
+  margin-top: 42px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.profile-cases h3 {
+  font-size: 1.125rem;
+  margin-bottom: 16px;
+  color: var(--deep);
+}
+
+.profile-cases ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-cases li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.profile-cases li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.profile-cases strong {
+  color: var(--deep);
 }
 
 .profile-copy p {
@@ -449,7 +494,10 @@ a {
 }
 
 .service-card {
-  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 180px;
   padding: 24px;
   background: #151f29;
   opacity: 0;
@@ -1265,7 +1313,23 @@ a {
   border-left: 1px solid rgba(255, 255, 255, 0.13);
 }
 
-@media (max-width: 920px) {
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .hero-media {
+    width: 100%;
+    height: 50%;
+    top: 0;
+    bottom: auto;
+  }
+  .hero-copy {
+    width: 100%;
+    padding: 32px 24px 64px;
+    margin-top: 50vh;
+  }
+}
   .site-header {
     align-items: flex-start;
     flex-direction: column;
