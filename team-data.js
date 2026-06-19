@@ -212,7 +212,7 @@ window.teamLawyers = {
   zhao: {
     name: "赵开升律师",
     title: "高级合伙人",
-    image: "",
+    image: "assets/zhao-kaisheng.jpg",
     center: "center",
     summary:
       "2003年开始从事法律实务，特别是在企业间欠款的非讼解决领域内深耕，有5000+案例的非诉讼实战经验，探索出异于常规律师函的书面催收技巧和越过法律途径之外的快捷解决思路。",

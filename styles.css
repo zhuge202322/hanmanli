@@ -57,7 +57,7 @@ a:hover {
   justify-content: space-between;
   padding: 16px 24px;
   background: var(--bg);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .brand {
@@ -168,13 +168,13 @@ a:hover {
   display: flex;
   align-items: center;
   background: var(--bg);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .hero-copy {
   width: 50%;
   padding: 64px 48px;
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -233,7 +233,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  border: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -274,7 +274,7 @@ a:hover {
 
 .section {
   padding: 80px 48px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .section h2 {
@@ -289,7 +289,7 @@ a:hover {
 
 .featured-article {
   background: var(--bg);
-  border: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   padding: 48px;
   margin-bottom: 24px;
 }
@@ -349,7 +349,7 @@ a:hover {
   color: var(--fg);
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   cursor: pointer;
   font-size: 13px;
   text-transform: uppercase;
@@ -362,11 +362,11 @@ a:hover {
   grid-template-columns: 1fr 1fr;
   gap: 0;
   background: var(--bg);
-  border: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .profile-image {
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .profile-image img {
@@ -383,7 +383,7 @@ a:hover {
 .profile-cases {
   margin-top: 48px;
   padding-top: 48px;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .profile-cases h3 {
@@ -402,7 +402,7 @@ a:hover {
 .profile-cases li {
   position: relative;
   padding-top: 16px;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   color: var(--muted);
 }
 
@@ -422,7 +422,7 @@ a:hover {
   display: grid;
   gap: 0;
   margin: 48px 0 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .profile-list div {
@@ -430,7 +430,7 @@ a:hover {
   grid-template-columns: 120px 1fr;
   gap: 24px;
   padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   align-items: baseline;
 }
 
@@ -463,7 +463,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .service-card {
@@ -472,7 +472,7 @@ a:hover {
   align-items: center;
   padding: 32px 0;
   background: transparent;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   transition: padding-left 0.3s ease;
 }
 
@@ -497,7 +497,7 @@ a:hover {
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   padding-bottom: 4px;
 }
 
@@ -516,15 +516,14 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .timeline div {
   min-height: 220px;
   padding: 32px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .timeline strong {
@@ -548,7 +547,7 @@ a:hover {
 
 .credential-layout img {
   width: 100%;
-  border: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   
 }
 
@@ -556,14 +555,14 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .credential-list p {
   margin: 0;
   padding: 24px 0;
   background: transparent;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .credential-cta {
@@ -575,14 +574,13 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .case-grid article {
   padding: 48px;
   background: var(--bg);
-  border-bottom: 1px solid var(--line);
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   min-height: 220px;
 }
 
@@ -606,7 +604,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .team-member {
@@ -616,7 +614,7 @@ a:hover {
   padding: 32px 0;
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   align-items: center;
 }
 
@@ -638,7 +636,7 @@ a:hover {
 .avatar-text {
   background: var(--bg);
   color: var(--fg);
-  border: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .team-member h3 {
@@ -702,7 +700,7 @@ a:hover {
   padding: 48px 48px;
   color: var(--muted);
   background: var(--bg);
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   text-align: center;
   font-size: 11px;
   text-transform: uppercase;
@@ -722,7 +720,7 @@ a:hover {
   padding: 80px 48px;
   color: var(--fg);
   background: var(--bg);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .sub-hero h1 {
@@ -754,7 +752,7 @@ a:hover {
   padding: 120px 48px;
   background: var(--bg);
   color: var(--fg);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .product-hero h1,
@@ -769,7 +767,7 @@ a:hover {
 .summary-grid {
   display: grid;
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .detail-grid {
@@ -782,8 +780,7 @@ a:hover {
 .summary-grid article {
   padding: 32px;
   background: var(--bg);
-  border-bottom: 1px solid var(--line);
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .detail-grid h3,
@@ -813,7 +810,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .role-list p,
@@ -821,8 +818,7 @@ a:hover {
   margin: 0;
   padding: 24px;
   background: var(--bg);
-  border-bottom: 1px solid var(--line);
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .timeline.compact {
@@ -848,7 +844,7 @@ a:hover {
 
 .process-list article {
   background: transparent;
-  border-color: var(--line);
+  border-color: rgba(17, 17, 17, 0.08);
 }
 
 .process-list span {
@@ -881,15 +877,14 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .private-map article {
   min-height: 230px;
   padding: 32px;
   background: transparent;
-  border-bottom: 1px solid var(--line);
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .private-map span {
@@ -948,15 +943,15 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .certificate-card {
   display: grid;
   min-height: 420px;
   background: var(--bg);
-  border-bottom: 1px solid var(--line);
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  padding: 16px;
 }
 
 .cert-visual {
@@ -965,7 +960,7 @@ a:hover {
   aspect-ratio: 1.32;
   place-items: center;
   background: transparent;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   overflow: hidden;
 }
 
@@ -1037,7 +1032,7 @@ a:hover {
   padding: 0;
   color: var(--fg);
   background: transparent;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1053,7 +1048,7 @@ a:hover {
 .team-switcher {
   display: flex;
   gap: 24px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   padding: 0 48px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -1091,7 +1086,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .lawyer-editorial-card:first-child {
@@ -1099,7 +1094,7 @@ a:hover {
 }
 
 .lawyer-editorial-visual {
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   position: relative;
 }
 
@@ -1129,7 +1124,7 @@ a:hover {
   place-items: center;
   background: var(--bg);
   color: var(--fg);
-  border: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   font-size: 72px;
   font-family: var(--font-heading);
 }
@@ -1160,7 +1155,7 @@ a:hover {
   display: grid;
   gap: 0;
   margin: 48px 0;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .lawyer-facts div {
@@ -1168,7 +1163,7 @@ a:hover {
   grid-template-columns: 120px 1fr;
   gap: 24px;
   padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   align-items: baseline;
 }
 
@@ -1206,7 +1201,7 @@ a:hover {
 .lawyer-sections li {
   position: relative;
   padding-top: 16px;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   color: var(--muted);
 }
 
@@ -1221,7 +1216,7 @@ a:hover {
   
   .lawyer-editorial-visual {
     border-right: none;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   }
   
   .sticky-visual {
@@ -1408,7 +1403,7 @@ a:hover {
   .site-header.nav-open .top-nav {
     max-height: 420px;
     padding-top: 10px;
-    border-top: 1px solid var(--line);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   }
 
   .top-nav a {
